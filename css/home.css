@@ -2,6 +2,7 @@
 @import './main/reset.css';
 @import './main/variables.css';
 @import './main/layout.css';
+@import './main/base.css';
 /* 3rd-party */
 @import './3rd-party/font-awesome.min.css';
 /* components */
@@ -9,3 +10,48 @@
 @import './components/footer.css';
 
 /* CUSTOM STYLE BELOW */
+
+/* HEADER START */
+/* HEADER END */
+
+/* HERO START */
+/* HERO END */
+
+/* FEATURES START */
+/* FEATURES END */
+
+/* COMMUNICATION START */
+/* COMMUNICATION END */
+
+/* DEVICE START */
+/* DEVICE END */
+
+/* HOW WORKS START */
+/* HOW WORKS END */
+
+/* GALLERY START */
+/* GALLERY END */
+
+/* TESTIMONIALS START */
+/* TESTIMONIALS END */
+
+/* PRICING START */
+/* PRICING END */
+
+/* FAQ START */
+/* FAQ END */
+
+/* TEAM START */
+/* TEAM END */
+
+/* APP STORE START */
+/* APP STORE END */
+
+/* SUBSCRIBE START */
+/* SUBSCRIBE END */
+
+/* CONTACT US START */
+/* CONTACT US END */
+
+/* FOOTER START */
+/* FOOTER END */
