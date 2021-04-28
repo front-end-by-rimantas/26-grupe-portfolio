@@ -37,14 +37,22 @@
 .container > .row {
   display: inline-block;
   width: 100%;
+}
+.container > .row + .row {
   margin-top: 20px;
 }
 
-.container > .row > .visible {
-  display: inline-block;
+.visible {
+  display: inline-block !important;
 }
-.container > .row > .hidden {
-  display: none;
+.hidden {
+  display: none !important;
+}
+.forward {
+  float: left !important;
+}
+.reverse {
+  float: right !important;
 }
 
 .container > .row > [class*='col-'] {
@@ -131,11 +139,17 @@
     --half-gap: 10px;
   }
 
-  .container > .row > .visible-sm {
-    display: inline-block;
+  .visible-sm {
+    display: inline-block !important;
   }
-  .container > .row > .hidden-sm {
-    display: none;
+  .hidden-sm {
+    display: none !important;
+  }
+  .forward-sm {
+    float: left !important;
+  }
+  .reverse-sm {
+    float: right !important;
   }
 
   .container > .row {
@@ -222,11 +236,17 @@
     --half-gap: 15px;
   }
 
-  .container > .row > .visible-md {
-    display: inline-block;
+  .visible-md {
+    display: inline-block !important;
   }
-  .container > .row > .hidden-md {
-    display: none;
+  .hidden-md {
+    display: none !important;
+  }
+  .forward-md {
+    float: left !important;
+  }
+  .reverse-md {
+    float: right !important;
   }
 
   .container > .row {
@@ -313,11 +333,17 @@
     --half-gap: 20px;
   }
 
-  .container > .row > .visible-lg {
-    display: inline-block;
+  .visible-lg {
+    display: inline-block !important;
   }
-  .container > .row > .hidden-lg {
-    display: none;
+  .hidden-lg {
+    display: none !important;
+  }
+  .forward-lg {
+    float: left !important;
+  }
+  .reverse-lg {
+    float: right !important;
   }
 
   .container > .row {
@@ -404,11 +430,17 @@
     --half-gap: 25px;
   }
 
-  .container > .row > .visible-xl {
-    display: inline-block;
+  .visible-xl {
+    display: inline-block !important;
   }
-  .container > .row > .hidden-xl {
-    display: none;
+  .hidden-xl {
+    display: none !important;
+  }
+  .forward-xl {
+    float: left !important;
+  }
+  .reverse-xl {
+    float: right !important;
   }
 
   .container > .row {
