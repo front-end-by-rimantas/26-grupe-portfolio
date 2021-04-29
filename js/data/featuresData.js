@@ -28,6 +28,21 @@ const featuresData = {
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
         {
+            img: 'features_image_4.png',
+            title: 'Easy to Customize',
+            description: '',
+        },
+        {
+            img: 'features_image_4.png',
+            title: '',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
+        },
+        {
+            img: '',
+            title: 'Easy to Customize',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
+        },
+        {
             img: undefined,
             title: 'Easy to Customize',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
@@ -47,6 +62,12 @@ const featuresData = {
             title: ['Labas', 'rytas', false],
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
+        {},
+        485625,
+        '',
+        true,
+        [],
+        null,
         {
             img: true,
             title: 'Easy to Customize',

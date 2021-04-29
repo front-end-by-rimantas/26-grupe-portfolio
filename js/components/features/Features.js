@@ -4,6 +4,9 @@ class Features {
         this.data = data;
 
         this.DOM = null;
+        this.maxItems = 3;
+        this.availableStategies = ['first', 'last', 'random'];
+        this.strategy = this.availableStategies[0];
 
         this.init();
     }
@@ -17,7 +20,21 @@ class Features {
             return false;
         }
 
-        console.log('continue....');
+        if (!this.isValidDataImg()) {
+            return false;
+        }
+
+        if (!this.isValidDataList()) {
+            return false;
+        }
+
+        this.isValidDataMax();
+        this.isValidDataStrategy();
+
+        this.filterData();
+        this.render();
+
+        console.log(this.strategy);
     }
 
     isValidSelector() {
@@ -36,10 +53,58 @@ class Features {
         return true;
     }
 
-    // isValidDataImg() {}
-    // isValidDataMax() {}
-    // isValidDataStrategy() {}
-    // isValidDataList() {}
+    isValidDataImg() {
+        if (typeof this.data.imgPath !== 'string' ||
+            this.data.imgPath === '') {
+            console.error('ERROR: duomenu imgPath yra netinkamo formato');
+            return false;
+        }
+        return true;
+    }
+
+    isValidDataMax() {
+        if (typeof this.data.maxItemsPerList !== 'number') {
+            console.warn('WARNING: maxItems turi buti skaicius');
+            return false;
+        }
+
+        if (!isFinite(this.data.maxItemsPerList)) {
+            console.warn('WARNING: maxItems turi buti normalus skaicius');
+            return false;
+        }
+
+        if (this.data.maxItemsPerList < 1) {
+            console.warn('WARNING: maxItems turi buti teigiamas skaicius, didesnis arba lygus uz viena');
+            return false;
+        }
+
+        if (this.data.maxItemsPerList % 1 !== 0) {
+            console.warn('WARNING: maxItems turi buti teigiamas sveikas skaicius');
+            return false;
+        }
+
+        this.maxItems = this.data.maxItemsPerList;
+    }
+
+    isValidDataStrategy() {
+        if (typeof this.data.displayStrategy !== 'string' ||
+            this.data.displayStrategy === '' ||
+            !this.availableStategies.includes(this.data.displayStrategy)) {
+            console.warn('WARNING: norima atvaizdavimo strategija yra neimanoma pasirinkti');
+            return false;
+        }
+
+        this.strategy = this.data.displayStrategy;
+    }
+
+    isValidDataList() {
+        if (!Array.isArray(this.data.list) ||
+            this.data.list.length === 0) {
+            console.error('ERROR: duomenu sarasas netinkamo formato arba tuscias');
+            return false;
+        }
+        return true;
+    }
 
     isValidData() {
         if (typeof this.data !== 'object' ||
@@ -51,13 +116,67 @@ class Features {
         return true;
     }
 
-    // isValidItemImg() {}
-    // isValidItemTitle() {}
-    // isValidItemDescription() {}
-    // isValidListItem() {}          atsako, ar objektas yra validus
+    isValidItemImg(item) {
+        if (typeof item.img !== 'string' ||
+            item.img === '') {
+            return false;
+        }
+        return true;
+    }
 
-    // filterData() {}               turi atrinkti tik validzius duomenis
-    // render() {}                   turinio generavimas
+    isValidItemTitle(item) {
+        if (typeof item.title !== 'string' ||
+            item.title === '') {
+            return false;
+        }
+        return true;
+    }
+
+    isValidItemDescription(item) {
+        if (typeof item.description !== 'string' ||
+            item.description === '') {
+            return false;
+        }
+        return true;
+    }
+
+    isValidListItem(item) {
+        if (typeof item !== 'object' ||
+            item === null ||
+            Array.isArray(item)) {
+            return false;
+        }
+        return true;
+    }
+
+    filterData() {
+        const validData = [];
+
+        // turi atrinkti tik validzius duomenis
+        for (const feature of this.data.list) {
+            if (this.isValidListItem(feature) &&
+                this.isValidItemImg(feature) &&
+                this.isValidItemTitle(feature) &&
+                this.isValidItemDescription(feature)) {
+                validData.push(feature);
+            }
+        }
+
+        this.data.list = validData;
+    }
+
+    render() {
+        let HTML = '';
+
+        let index = 0;
+        for (const feature of this.data.list) {
+            HTML += `<div class="col-12 col-md-6 col-lg-4">
+                        FEATURE ${++index}
+                    </div>`;
+        }
+
+        this.DOM.innerHTML = HTML;
+    }
 }
 
 export { Features }
