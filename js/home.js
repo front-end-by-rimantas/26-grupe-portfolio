@@ -7,6 +7,8 @@
 /* HERO END */
 
 /* FEATURES START */
+import { Features } from './components/features/Features.js';
+import { featuresData } from './data/featuresData.js';
 /* FEATURES END */
 
 /* COMMUNICATION START */
@@ -55,6 +57,7 @@
 /* HERO END */
 
 /* FEATURES START */
+new Features('#features_block', featuresData);
 /* FEATURES END */
 
 /* COMMUNICATION START */
