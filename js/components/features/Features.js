@@ -12,19 +12,10 @@ class Features {
     }
 
     init() {
-        if (!this.isValidSelector()) {
-            return false;
-        }
-
-        if (!this.isValidData()) {
-            return false;
-        }
-
-        if (!this.isValidDataImg()) {
-            return false;
-        }
-
-        if (!this.isValidDataList()) {
+        if (!this.isValidSelector() ||
+            !this.isValidData() ||
+            !this.isValidDataImg() ||
+            !this.isValidDataList()) {
             return false;
         }
 
@@ -170,8 +161,10 @@ class Features {
 
         let index = 0;
         for (const feature of this.data.list) {
-            HTML += `<div class="col-12 col-md-6 col-lg-4">
-                        FEATURE ${++index}
+            HTML += `<div class="col-12 col-md-6 col-lg-4 feature">
+                        <img src="${this.data.imgPath + feature.img}">
+                        <h3>${feature.title}</h3>
+                        <p>${feature.description}</p>
                     </div>`;
         }
 

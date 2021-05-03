@@ -7,6 +7,7 @@
 @import './3rd-party/font-awesome.min.css';
 /* components */
 @import './components/header.css';
+@import './components/features.css';
 @import './components/footer.css';
 
 /* CUSTOM STYLE BELOW */
