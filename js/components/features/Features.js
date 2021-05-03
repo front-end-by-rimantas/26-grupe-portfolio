@@ -5,7 +5,7 @@ class Features {
 
         this.DOM = null;
         this.maxItems = 3;
-        this.availableStategies = ['first', 'last', 'random'];
+        this.availableStategies = ['first', 'last', 'random', 'all'];       // if "all" -> maxItems = Infinity;
         this.strategy = this.availableStategies[0];
 
         this.init();
@@ -24,8 +24,6 @@ class Features {
 
         this.filterData();
         this.render();
-
-        console.log(this.strategy);
     }
 
     isValidSelector() {
@@ -156,11 +154,66 @@ class Features {
         this.data.list = validData;
     }
 
+    /**
+     * Metodas gauti atsitiktini skaiciu
+     * @param {number} min Minimalus leistinas skaicius
+     * @param {number} max Maksimalus leistinas skaicius
+     * @returns Atsitiktinis skaicius nurodytame intervale
+     */
+    getRandomNumber(min, max) {
+        const gap = max - min + 1;
+        return min + Math.floor(Math.random() * gap);
+    }
+
+    getRandomData() {
+        const data = [];
+        const randomIndexes = [];
+
+        while (randomIndexes.length < this.maxItems) {
+            const randomNumber = this.getRandomNumber(0, this.data.list.length - 1);
+            if (!randomIndexes.includes(randomNumber)) {
+                randomIndexes.push(randomNumber);
+            }
+        }
+
+        for (const index of randomIndexes) {
+            data.push(this.data.list[index]);
+        }
+
+        return data;
+    }
+
+    getData() {
+        let data = [];
+
+        switch (this.strategy) {
+            case 'first':
+                data = this.data.list.slice(0, this.maxItems);
+                break;
+
+            case 'last':
+                data = this.data.list.slice(-this.maxItems);
+                break;
+
+            case 'random':
+                data = this.getRandomData();
+                break;
+
+            case 'all':
+                data = [...this.data.list];
+                break;
+        }
+
+        return data;
+    }
+
     render() {
         let HTML = '';
 
+        const printableData = this.getData();
+
         let index = 0;
-        for (const feature of this.data.list) {
+        for (const feature of printableData) {
             HTML += `<div class="col-12 col-md-6 col-lg-4 feature">
                         <img src="${this.data.imgPath + feature.img}">
                         <h3>${feature.title}</h3>

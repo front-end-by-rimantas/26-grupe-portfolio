@@ -1,7 +1,7 @@
 const featuresData = {
     imgPath: './img/features/',
     maxItemsPerList: 6,
-    displayStrategy: 'first',       // [first|last|random]
+    displayStrategy: 'random',       // [first|last|random|all]
     list: [
         {
             img: 'featured_image_1.png',
@@ -108,12 +108,12 @@ const featuresData = {
         },
         {
             img: 'featured_image_1.png',
-            title: 'Fully functional',
+            title: 'Fully functional 2',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
         {
             img: 'featured_image_2.png',
-            title: 'Live Chat',
+            title: 'Live Chat 2',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
         {
@@ -122,12 +122,12 @@ const featuresData = {
         },
         {
             img: 'featured_image_3.png',
-            title: 'Secure Data',
+            title: 'Secure Data 2',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
         {
             img: 'featured_image_4.png',
-            title: 'Easy to Customize',
+            title: 'Easy to Customize 2',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
         {
@@ -136,7 +136,7 @@ const featuresData = {
         },
         {
             img: 'featured_image_5.png',
-            title: 'Responsive Design',
+            title: 'Responsive Design 2',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
         {
@@ -145,7 +145,7 @@ const featuresData = {
         },
         {
             img: 'featured_image_6.png',
-            title: 'Help Documentation',
+            title: 'Help Documentation 2',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.',
         },
     ]
