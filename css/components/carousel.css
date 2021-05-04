@@ -1,0 +1,35 @@
+.testimonials {
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+.testimonial > img {
+  display: inline-block;
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  object-position: center;
+}
+.testimonial > .name {
+  font-size: 30px;
+}
+.testimonial > .rating {
+  font-size: 20px;
+}
+.testimonial > .text {
+  font-size: 20px;
+}
+
+.controls {
+}

@@ -24,6 +24,8 @@ import { featuresData } from './data/featuresData.js';
 /* GALLERY END */
 
 /* TESTIMONIALS START */
+import { Carousel } from './components/carousel/Carousel.js';
+import { testimonialsData } from './data/testimonialsData.js';
 /* TESTIMONIALS END */
 
 /* PRICING START */
@@ -75,6 +77,7 @@ new Features('#features_block', featuresData);
 /* GALLERY END */
 
 /* TESTIMONIALS START */
+new Carousel('#testimonials_block', testimonialsData);
 /* TESTIMONIALS END */
 
 /* PRICING START */
