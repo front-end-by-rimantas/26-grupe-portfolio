@@ -4,6 +4,7 @@
 
 .list {
   display: flex;
+  transition: all 1s;
 }
 
 .testimonial {
@@ -32,4 +33,21 @@
 }
 
 .controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.controls > .circle {
+  width: 15px;
+  height: 15px;
+  background-color: #f008;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.controls > .circle:hover {
+  background-color: #f00c;
+}
+.controls > .circle.active {
+  background-color: #f00;
 }
