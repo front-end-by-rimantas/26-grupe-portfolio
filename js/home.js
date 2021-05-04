@@ -27,6 +27,8 @@ import { featuresData } from './data/featuresData.js';
 /* TESTIMONIALS END */
 
 /* PRICING START */
+import { Pricing } from './components/pricing/Pricing.js';
+import { pricingData } from './data/pricingData.js';
 /* PRICING END */
 
 /* FAQ START */
@@ -76,6 +78,7 @@ new Features('#features_block', featuresData);
 /* TESTIMONIALS END */
 
 /* PRICING START */
+new Pricing('#pricing_block', pricingData);
 /* PRICING END */
 
 /* FAQ START */
